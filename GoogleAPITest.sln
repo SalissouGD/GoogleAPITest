@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeminiChatBot", "GeminiChatBot\GeminiChatBot.csproj", "{B7529808-A340-0C81-5517-B6336E3B5EC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeminiSpamDetector", "GeminiSpamDetector\GeminiSpamDetector.csproj", "{D4D94439-C133-408B-BAC4-C94F879147FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,11 @@ Global
 		{B7529808-A340-0C81-5517-B6336E3B5EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7529808-A340-0C81-5517-B6336E3B5EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7529808-A340-0C81-5517-B6336E3B5EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D94439-C133-408B-BAC4-C94F879147FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D94439-C133-408B-BAC4-C94F879147FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D94439-C133-408B-BAC4-C94F879147FF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D4D94439-C133-408B-BAC4-C94F879147FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D94439-C133-408B-BAC4-C94F879147FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

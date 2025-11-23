@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:GeminiSpamDetector.ViewModels"
+             xmlns:converters="clr-namespace:GeminiSpamDetector.Converters"
+             x:Class="GeminiSpamDetector.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            
+            <Label Text="Gemini Spam Detector"
+                   FontSize="28" FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="10">
+                    <Entry Placeholder="Expéditeur (ex: support@google.com)"
+                           Text="{Binding SenderInput}" />
+                    
+                    <Entry Placeholder="Objet du mail"
+                           Text="{Binding SubjectInput}" />
+                    
+                    <Editor Placeholder="Collez le contenu du mail ici..."
+                            HeightRequest="150"
+                            Text="{Binding BodyInput}" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Analyser le mail"
+                    Command="{Binding AnalyzeSpamCommand}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                    BackgroundColor="#512BD4"
+                    TextColor="White"
+                    HeightRequest="50"/>
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               Color="#512BD4"/>
+
+            <Frame BackgroundColor="{Binding ResultColor}" 
+                   CornerRadius="10" 
+                   Padding="15"
+                   IsVisible="{Binding AnalysisResult, Converter={StaticResource StringNotNullOrEmptyConverter}}">
+                <Label Text="{Binding AnalysisResult}" 
+                       TextColor="White" 
+                       FontAttributes="Bold" />
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+</ContentPage>
